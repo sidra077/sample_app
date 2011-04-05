@@ -7,5 +7,8 @@ class PagesController < ApplicationController
 
   def about
   end
+  
+  def document
+  end
 
 end
