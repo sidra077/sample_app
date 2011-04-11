@@ -4,7 +4,7 @@
 }
 
 body {
-	background: #cff;
+	background: #0276FD;
 }
 
 header {
@@ -21,21 +21,24 @@ section {
 	font-size: 120%;
 	padding: 20px;
 	background: #fff;
+
 }
 
 section h1 {
+
 	font-size: 200%;
+	color: #0276FD;
 }
 
 /* Links */
 
 a {
-	color: #09C;
+	color: #0276FD;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #069;
+	color: #008B00;
 	text-decoration: underline;
 }
 
@@ -72,7 +75,7 @@ nav ul li a {
 }
 
 nav ul li a:visited {
-	color: #09C;
+	color: #0276FD;
 }
 
 nav ul li a:hover {
@@ -86,9 +89,9 @@ a.signup_button {
 	margin-right: auto;
 	display: block;
 	text-align: center;
-	width: 190px;
+	width: 140px;
 	color: #fff;
-	background: #006400;
+	background: #0276FD;
 	font-size: 150%;
 	font-weight: bold;
 	padding: 20px;
@@ -103,6 +106,7 @@ a.signup_button {
 }
 
 footer {
+
 	text-align: center;
 	margin-top: 10px;
 	width: 710px;
