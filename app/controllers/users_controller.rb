@@ -19,6 +19,7 @@ def create
   
   @user = User.new(params[:user])
   if (@user.save)
+    sign_in @user
   # Handle a successful save.
   flash[:success] = "Welcome to the Sample Application !"
   redirect_to @user
@@ -29,5 +30,6 @@ def create
   
 end
 
+##
 
 end
