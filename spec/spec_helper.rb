@@ -6,6 +6,11 @@ Spork.prefork do
   # if you change any configuration or code from libraries loaded here, you'll
   # need to restart spork for it take effect.
   
+  def test_sign_in(user)
+    controller.sign_in(user)
+  end
+  
+  
   ENV["RAILS_ENV"] ||= 'test'
   unless defined?(Rails)
     require File.dirname(__FILE__) + "/../config/environment"
@@ -39,6 +44,7 @@ Rspec.configure do |config|
   config.use_transactional_fixtures = true
 
 ActiveSupport::Dependencies.clear
+
 end
 end
 
