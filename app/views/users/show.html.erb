@@ -7,6 +7,8 @@
 	            <%= @user.name %>
 	</h1>
 	
+	<%= render 'follow_form' if signed_in? %>
+	
 	<% unless @user.microposts.empty? %>
 	<table class = "microposts" summary = "User microposts">
 		<%= render @microposts %>
@@ -21,6 +23,7 @@
     <strong>Email: </strong> <%= @user.email %><br />	
 	<strong>URL: </strong> <%= link_to user_path(@user), @user %><br/>
 	<strong>Microposts: </strong><%= @user.microposts.count %>
+	<%= render 'shared/stats'%>
 	</td>
 	</tr>
 	</table>
