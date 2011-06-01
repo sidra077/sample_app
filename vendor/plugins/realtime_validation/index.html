@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>
+            Rails Real-Time Form Validation Plug-in
+         </title>
+    </head>
+    <body>
+		<h1>Rails Real-Time Form Validation Plug-in</h1>        
+		<h2>Written By Vince Puzzella</h2>
+		<p>
+			Uses AJAX (requires prototype.js!!!) and your model validation rules to validate form data in real-time.  
+			Invalid form fields are then dynamically embedded into span elements which can be stylized using CSS.
+		</p>
+		<p>
+			I look forward to your comments, suggestions and critisism.  Please, have your say in the <a href="http://rubyforge.org/forum/?group_id=1625">forums</a>!
+		</p>	
+		<p>
+			Note to FireFox users: The outlines don't look right, I know.  CSS gurus, please help!
+		</p>
+		<h3>Usage:</h3>
+		<a href="http://rubyforge.org/projects/railsrtv/">Download</a> and extract to your vendor/plugins directory
+		
+		<h4>In your controller:</h4>
+<pre>
+include UIEnhancements::RealtimeValidation
+helper :RealtimeValidation
+realtime_validation_for(:the_form_id, :the_model)
+</pre>
+	
+		<h4>In your view, after a form:</h4>
+		<pre>&lt;%= realtime_validation_for :the_form_id, :the_model %&gt;</pre>
+		
+		<h4>In your CSS (example):</h4>
+<pre>
+.fieldWithoutErrors,
+.fieldWithErrors
+{
+    outline-width: 1px;
+    outline-color: white;
+    outline-style: solid;
+
+    /* !!HACK!! IE will not use this because it does not understand !important.  Border is not needed for firefox, so make it 0px!*/
+    border-width: 0px !important;    
+    /*for IE!*/
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+}
+.fieldWithErrors
+{
+    outline-color: red;
+    	    
+    /*for IE!*/
+    border-color: red;
+}
+</pre>
+		
+		<h3>Known to work with:</h3> 
+		<ul>
+		    <li>Ruby 1.8.4</li>
+		    <li>Rails 1.1.2</li>
+		    <li>FireFox 1.5</li>
+		    <li>IE 6</li>
+		</ul>
+
+		<h3>Known issues:</h3>
+		<ul>
+		    <li>
+		        Multi-param form feilds (I.E: date_select)
+			   <ul><li>You must wrap the multi-param fields with a span element.  The span element must have an id of "model_name_attribute_name".</li></ul>
+		    </li>
+		    <li>
+		        The CSS in this example doesn't look great in Firefox.  If someone has a suggestion, please let me know!	
+		    </li>
+		    <li>
+		        Does not support button groups yet (I.E: Radio buttons).
+		    </li>
+		</ul>
+	
+		<p>That's it, enjoy!</p>
+    </body>
+</html>
